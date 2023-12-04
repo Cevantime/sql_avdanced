@@ -3,10 +3,11 @@ SQL Avancé
 
 Ce cours s'adresse à ceux qui voudraient aller un peu plus loin dans la compréhension du langage SQL
 
-Sujets abordés
+Sujets abordés :
 
+ - Éléments syntaxiques cruciaux
  - Triggers
  - Fonctions
- - Techniques d'optimisation
  - Transactions
  - Vues
+ - Principe de fonctionnement et optimisations
