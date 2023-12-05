@@ -28,7 +28,7 @@ où :
  * ``IN``, ``OUT``, ``INOUT`` précise si le paramètre est un paramètre d'entrée, de sortie ou les deux à la fois 
 
 .. note::
-    Les paramètres d'entrée ``IN`` sont présents pour être lus mais pas pour être modifiés/réassignés dans la fonction
+    Les paramètres d'entrée ``IN`` sont présents pour être lus mais pas pour être modifiés/réassignés dans la fonction.
     Les paramètres de sortie ``OUT`` sont conçus pour être modifiés/réassignés mais pas pour être lus. Leur nouvelle valeur peut être réutilisée dans le reste du programme.
     Les paramètres ``INOUT`` combine les deux spécificités. On peut les voir comme de pures _références_.
 
@@ -99,7 +99,7 @@ Cette fonction peut s'utiliser comme ceci:
 Les Procédures SQL
 ------------------
 
-Une procédure SQL est un ensemble d'instructions SQL regroupées sous un nom spécifique. Contrairement aux fonctions, les procédures ne retournent généralement pas de valeurs. Elles sont souvent utilisées pour effectuer des opérations ou des modifications sur la base de données. On peut les voir comme **un cas particulier de fonction**.
+Une procédure SQL est un ensemble d'instructions SQL regroupées sous un nom spécifique. Contrairement aux fonctions, les procédures ne retournent pas de valeurs. Elles sont souvent utilisées pour effectuer des opérations ou des modifications sur la base de données. On peut les voir comme **un cas particulier de fonction**.
 
 Syntaxe des procédures
 
@@ -121,7 +121,7 @@ Comme on le voit, il existe deux différences syntaxiques entre les fonctions et
 Par conséquent, une procédure ne peut pas contenir dans son corps de mot clé ``RETURN`` non plus !
 
 .. warning:: 
-    Comme pour les fonctions, la syntaxe des procédures peut être plus complexe.
+    Comme pour les fonctions, la syntaxe des procédures peut être plus complexe que celle présentée ci-dessus.
 
 Exemple de procédure SQL
 ------------------------
@@ -147,11 +147,11 @@ Pour exécuter une procédure, utilisez la commande ``CALL`` :
 Autre exemple
 -------------
 
-Cette procédure permet de décomposer un nombre de secondes en année, jour et heure et assigne ces valeurs en variable de sortie.
+Cette procédure permet de décomposer un nombre de secondes en années, jours et heures et assigne ces valeurs en variable de sortie.
 
 .. code-block:: SQL
 
-    CREATE PROCEDURE decomposer_en_annee_jour_heure(IN seconds INT, OUT year INT, OUT days INT, OUT hours INT)
+    CREATE PROCEDURE decomposer_en_annee_jour_heure(IN seconds INT, OUT years INT, OUT days INT, OUT hours INT)
     BEGIN
         SET year = seconds / (24 * 365 * 3600);
         SET days = (seconds % (24 * 365 * 3600)) / (24 * 3600);
