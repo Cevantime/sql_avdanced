@@ -3,14 +3,14 @@ Avant propos
 
 Dans cette partie, nous aborderons de instructions composées et stockées plus complexes que de simples requêtes. Cela requiert, en SQL, quelques précautions syntaxiques. Ce sont ces précisions que nous allons étudier ici.
 
-D'autre part, les exemples et TD de ce cours utilisent le langage SQL de MySQL. D'autres SGBDR peuvent peuvent avoir des syntaxes et fonctionnalité légèrement différentes.
+D'autre part, les exemples et TD de ce cours utilisent le langage SQL de MySQL. D'autres SGBDR peuvent peuvent avoir des syntaxes et fonctionnalités légèrement différentes.
 
 Si vous souhaitez a voir un aperçu de ces différences, voici une `excellente ressource <https://troels.arvin.dk/db/rdbms/>`_.
 
 BEGIN... END
 ------------
 
-En MySQL (et en postgresql aussi d'ailleurs), l'écriture de programmes stocké implique la création d'instructions multiples. Par conséquent, lorsque vous créez une fonction/procédure/trigger/event à plusieurs instructions, vous devez impérativement entourer celles-ci des mot-clés ``BEGIN`` et ``END;``.
+En MySQL (et en postgresql aussi d'ailleurs), l'écriture de programmes stockés implique la création d'instructions multiples. Par conséquent, lorsque vous créez une fonction/procédure/trigger/event à plusieurs instructions, vous devez impérativement entourer celles-ci des mot-clés ``BEGIN`` et ``END;``.
 
 Exemple 
 
@@ -49,7 +49,7 @@ Lorsque ceci est envoyé à MySQL, le serveur va vouloir exécuter l'instruction
 Pour éviter cela, nous allons **changer temporairement de délimiteur**, afin que ce soit la création de la fonction qui soit exécutée, et non les instructions qu'elle contient. Pour cela, on utilise le mot-clé ``DELIMITER`` : 
 
 .. code-block:: sql
-  :emphasize-lines: 1,7
+  :emphasize-lines: 1,5
 
     DELIMITER //
     CREATE FUNCTION calculer_somme(a INT, b INT)
@@ -62,7 +62,7 @@ Ici, on change le délimiteur en ``//`` afin que l'instruction se termine à la 
 Mais si l'on maintient ce code en l'état, notre modification risque d'être permanente puisque le délimiteur va rester ``//``. Pour revenir au comportement par défaut après notre déclaration de fonction, il faut redéfinir le délimiteur comme ``;`` :
 
 .. code-block:: sql
-  :emphasize-lines: 8
+  :emphasize-lines: 6
 
     DELIMITER //
     CREATE FUNCTION calculer_somme(a INT, b INT)
