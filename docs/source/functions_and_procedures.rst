@@ -18,9 +18,7 @@ La syntaxe générale pour créer une fonction SQL est la suivante :
 
     CREATE FUNCTION nom_de_la_fonction([<IN | OUT | INOUT>] paramètre1 <type>, [<IN | OUT | INOUT>] paramètre2 <type>, ...)
     RETURNS <type> 
-    BEGIN
-        -- Corps de la fonction
-    END;
+    -- Corps de la fonction
 
 
 où :
