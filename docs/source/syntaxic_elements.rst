@@ -8,7 +8,7 @@ Déclaration de variable
 
 L'une des premières choses à savoir faire reste de déclarer des variables. Trois manières cohabitent en MySQL.
 
-#. Déclaration d'une variable globale avec ``@@`` 
+#. Édition d'une variable globale avec ``@@`` 
 #. Déclaration d'une variable de session avec ``@``
 #. Déclaration d'une variable locale avec ``DECLARE``
 
