@@ -46,11 +46,11 @@ Avec le schéma suivant :
     -- Table pour stocker l'historique du stock
     CREATE TABLE stock_history (
         id INT PRIMARY KEY AUTO_INCREMENT,
-        ID_Produit INT,
+        product_id INT,
         quantity_before INT,
         quantity_after INT,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (id_product) REFERENCES product(id)
+        FOREIGN KEY (product_id) REFERENCES product(id)
     );
 
 
