@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fonctions et les Procédures SQL &mdash; Documentation SDWBDD23 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b20cc3f5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=68bd05ab"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="TD Fonctions et Procédures" href="td_functions_and_procedures.html" />
+    <link rel="prev" title="Éléments syntaxiques cruciaux" href="syntaxic_elements.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SDWBDD23
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Au menu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Accueil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Avant propos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxic_elements.html">Éléments syntaxiques cruciaux</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les fonctions et les procédures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-fonctions-sql">Les Fonctions SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quelques-exemples-de-fonction-sql">Quelques exemples de fonction SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-procedures-sql">Les Procédures SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemple-de-procedure-sql">Exemple de procédure SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autre-exemple">Autre exemple</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="td_functions_and_procedures.html">TD sur les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">Les triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="td_triggers.html">TD sur les triggers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDWBDD23</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Fonctions et les Procédures SQL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/functions_and_procedures.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fonctions-et-les-procedures-sql">
+<h1>Fonctions et les Procédures SQL<a class="headerlink" href="#fonctions-et-les-procedures-sql" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Les fonctions et les procédures permettent de regrouper des blocs de code SQL pour les réutiliser.</p>
+</section>
+<section id="les-fonctions-sql">
+<h2>Les Fonctions SQL<a class="headerlink" href="#les-fonctions-sql" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Une fonction SQL est un bloc de code qui effectue une tâche spécifique et renvoie un résultat. Les fonctions peuvent être utilisées dans des expressions SQL, dans la clause SELECT par exemple, pour effectuer des calculs ou manipuler des données.</p>
+<p>La syntaxe générale pour créer une fonction SQL est la suivante :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">nom_de_la_fonction</span><span class="p">([</span><span class="o">&lt;</span><span class="k">IN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">INOUT</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="n">paramètre1</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&lt;</span><span class="k">IN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">INOUT</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="n">paramètre2</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span>
+<span class="c1">-- Corps de la fonction</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>où :</dt><dd><ul class="simple">
+<li><p>&lt;type&gt; est le type de variable (<code class="docutils literal notranslate"><span class="pre">INT</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR(60)</span></code>, <code class="docutils literal notranslate"><span class="pre">DECIMAL(5,2)</span></code> etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN</span></code>, <code class="docutils literal notranslate"><span class="pre">OUT</span></code>, <code class="docutils literal notranslate"><span class="pre">INOUT</span></code> précise si le paramètre est un paramètre d’entrée, de sortie ou les deux à la fois</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les paramètres d’entrée <code class="docutils literal notranslate"><span class="pre">IN</span></code> sont présents pour être lus mais pas pour être modifiés/réassignés dans la fonction.
+Les paramètres de sortie <code class="docutils literal notranslate"><span class="pre">OUT</span></code> sont conçus pour être modifiés/réassignés mais pas pour être lus. Leur nouvelle valeur peut être réutilisée dans le reste du programme.
+Les paramètres <code class="docutils literal notranslate"><span class="pre">INOUT</span></code> combine les deux spécificités. On peut les voir comme de pures _références_.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par défaut, les paramètres sont de type <code class="docutils literal notranslate"><span class="pre">IN</span></code> puisque c’est le mode le plus courant et le plus performant.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>La syntaxe des fonctions peut être un peu plus complexe que celle présentée ci-dessus puisqu’il est possible de préciser d’autres caractéristiques à notre fonction (utiles pour l’optimisation des performances, par exemple). Pour voir cela en détail, consultez le <a class="reference external" href="https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html">manuel</a>.</p>
+</div>
+</section>
+<section id="quelques-exemples-de-fonction-sql">
+<h2>Quelques exemples de fonction SQL<a class="headerlink" href="#quelques-exemples-de-fonction-sql" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Voici une fonction simple qui calcule la somme de deux nombres :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calculer_somme</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">DETERMINISTIC</span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Cette fonction s’utilisera comme ceci :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">calculer_somme</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Resultat</span><span class="p">;</span>
+<span class="c1">-- Résultat : 8</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notez la présence du mot clé <code class="docutils literal notranslate"><span class="pre">DETERMINISTIC</span></code> qui permet de préciser que la valeur de retour de notre fonction est entièrement déterminée par ses paramètres.</p>
+</div>
+<p>Autre exemple, utilisant cette fois la notion de paramètre de sortie :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calculer_montant_total</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">taxe_pourcentage</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">montant_taxe</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="c1">-- Calcul du montant total</span>
+<span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">montant</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">taxe_pourcentage</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">-- Attribution de la valeur de la taxe à la variable OUT</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">montant_taxe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">montant</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Retour du montant total</span>
+<span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Cette fonction peut s’utiliser comme ceci:</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Appel de la fonction</span>
+<span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">montant_taxe_resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">calculer_montant_total</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">montant_taxe_resultat</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Montant_Total</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">montant_taxe_resultat</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Montant_Taxe</span><span class="p">;</span>
+<span class="c1">-- Résultat :</span>
+<span class="c1">-- +---------------+--------------+</span>
+<span class="c1">-- | Montant_Total | Montant_Taxe |</span>
+<span class="c1">-- +---------------+--------------+</span>
+<span class="c1">-- | 110           | 10           |</span>
+<span class="c1">-- +---------------+--------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="les-procedures-sql">
+<h2>Les Procédures SQL<a class="headerlink" href="#les-procedures-sql" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Une procédure SQL est un ensemble d’instructions SQL regroupées sous un nom spécifique. Contrairement aux fonctions, les procédures ne retournent pas de valeurs. Elles sont souvent utilisées pour effectuer des opérations ou des modifications sur la base de données. On peut les voir comme <strong>un cas particulier de fonction</strong>.</p>
+<p>Syntaxe des procédures</p>
+<p>La syntaxe générale pour créer une procédure SQL est la suivante :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">nom_de_la_procedure</span><span class="p">([</span><span class="o">&lt;</span><span class="k">IN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">INOUT</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="n">paramètre1</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&lt;</span><span class="k">IN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">INOUT</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="n">paramètre2</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="c1">-- Corps de la procédure</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Comme on le voit, il existe deux différences syntaxiques entre les fonctions et les procédures :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>mot clé <code class="docutils literal notranslate"><span class="pre">PROCEDURE</span></code> à la place de <code class="docutils literal notranslate"><span class="pre">FUNCTION</span></code></p></li>
+<li><p>par de <code class="docutils literal notranslate"><span class="pre">RETURNS</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Par conséquent, une procédure ne peut pas contenir dans son corps de mot clé <code class="docutils literal notranslate"><span class="pre">RETURN</span></code> non plus !</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Comme pour les fonctions, la syntaxe des procédures peut être plus complexe que celle présentée ci-dessus.</p>
+</div>
+</section>
+<section id="exemple-de-procedure-sql">
+<h2>Exemple de procédure SQL<a class="headerlink" href="#exemple-de-procedure-sql" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Voici une procédure qui met à jour la quantité disponible d’un produit en fonction d’un utilisateur :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">mettre_a_jour_quantite_produit</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">produit_id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">nouvelle_quantite</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">produit</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nouvelle_quantite</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">produit_id</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pour exécuter une procédure, utilisez la commande <code class="docutils literal notranslate"><span class="pre">CALL</span></code> :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CALL</span><span class="w"> </span><span class="n">mettre_a_jour_quantite_produit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="c1">-- Cette commande mettra à jour la quantité disponible du produit avec l&#39;ID 1 à 50.</span>
+</pre></div>
+</div>
+</section>
+<section id="autre-exemple">
+<h2>Autre exemple<a class="headerlink" href="#autre-exemple" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Cette procédure permet de décomposer un nombre de secondes en années, jours et heures et assigne ces valeurs en variable de sortie.</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">decomposer_en_annee_jour_heure</span><span class="p">(</span><span class="k">IN</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">years</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">days</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">OUT</span><span class="w"> </span><span class="n">hours</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="k">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">365</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">);</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">seconds</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">365</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">);</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">seconds</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">365</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3600</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3600</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Elle peut être utilisée comme ceci :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">CALL</span><span class="w"> </span><span class="n">decomposer_en_annee_jour_heure</span><span class="p">(</span><span class="mi">536435</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">h</span><span class="p">);</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">y</span><span class="w"> </span><span class="n">années</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">d</span><span class="w"> </span><span class="n">jours</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">h</span><span class="w"> </span><span class="n">heures</span><span class="p">;</span>
+
+<span class="c1">-- Résultat :</span>
+<span class="c1">-- +--------+-------+--------+</span>
+<span class="c1">-- | années | jours | heures |</span>
+<span class="c1">-- +--------+-------+--------+</span>
+<span class="c1">-- | 2      | 256   | 21     |</span>
+<span class="c1">-- +--------+-------+--------+</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="syntaxic_elements.html" class="btn btn-neutral float-left" title="Éléments syntaxiques cruciaux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="td_functions_and_procedures.html" class="btn btn-neutral float-right" title="TD Fonctions et Procédures" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2023, Thibault Truffert.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

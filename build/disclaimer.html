@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avant propos &mdash; Documentation SDWBDD23 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b20cc3f5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=68bd05ab"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Éléments syntaxiques cruciaux" href="syntaxic_elements.html" />
+    <link rel="prev" title="SQL Avancé" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SDWBDD23
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Au menu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Accueil</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Avant propos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#begin-end">BEGIN… END</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-du-delimiteur">Modification du délimiteur</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxic_elements.html">Éléments syntaxiques cruciaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions_and_procedures.html">Les fonctions et les procédures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="td_functions_and_procedures.html">TD sur les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">Les triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="td_triggers.html">TD sur les triggers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDWBDD23</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Avant propos</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/disclaimer.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="avant-propos">
+<h1>Avant propos<a class="headerlink" href="#avant-propos" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Dans cette partie, nous aborderons de instructions composées et stockées plus complexes que de simples requêtes. Cela requiert, en SQL, quelques précautions syntaxiques. Ce sont ces précisions que nous allons étudier ici.</p>
+<p>D’autre part, les exemples et TD de ce cours utilisent le langage SQL de MySQL. D’autres SGBDR peuvent peuvent avoir des syntaxes et fonctionnalités légèrement différentes.</p>
+<p>Si vous souhaitez a voir un aperçu de ces différences, voici une <a class="reference external" href="https://troels.arvin.dk/db/rdbms/">excellente ressource</a>.</p>
+<section id="begin-end">
+<h2>BEGIN… END<a class="headerlink" href="#begin-end" title="Lien permanent vers cette rubrique"></a></h2>
+<p>En MySQL (et en postgresql aussi d’ailleurs), l’écriture de programmes stockés implique la création d’instructions multiples. Par conséquent, lorsque vous créez une fonction/procédure/trigger/event à plusieurs instructions, vous devez impérativement entourer celles-ci des mot-clés <code class="docutils literal notranslate"><span class="pre">BEGIN</span></code> et <code class="docutils literal notranslate"><span class="pre">END;</span></code>.</p>
+<p>Exemple</p>
+</section>
+<section id="modification-du-delimiteur">
+<h2>Modification du délimiteur<a class="headerlink" href="#modification-du-delimiteur" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Démarrons par une fonctionnalité indispensable lorsqu’on commence à créer des instructions multiples en MySQL, à savoir la <strong>modification du délimiteur</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Ce problème est spécifique à MySQL. Si vous utilisez un autre SGBDR, vous pouvez ignorer cette section</p>
+</div>
+<p>Lorsqu’une instruction est soumise au serveur MySQL celui-ci va exécuter toutes les instructions qui se termine par un point virgule <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
+<p>Ceci peut être problématique dans le cas de l’écriture d’instructions stockées qui ne doivent pas être exécutées au moment de leur création (comme les fonctions).</p>
+<p>Voici un exemple :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calculer_somme</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="k">RETURNS</span><span class="w"> </span><span class="nb">INT</span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Lorsque ceci est envoyé à MySQL, le serveur va vouloir exécuter l’instruction <code class="docutils literal notranslate"><span class="pre">RETURN</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b;</span></code> car celle-ci est terminée par un <code class="docutils literal notranslate"><span class="pre">;</span></code>, ce qui n’est pas ce que l’on souhaite faire. Cette instruction ne doit être exécutée que <strong>lorsque la fonction est appelée</strong> et non au moment de sa création.</p>
+<p>Pour éviter cela, nous allons <strong>changer temporairement de délimiteur</strong>, afin que ce soit la création de la fonction qui soit exécutée, et non les instructions qu’elle contient. Pour cela, on utilise le mot-clé <code class="docutils literal notranslate"><span class="pre">DELIMITER</span></code> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="w">  </span><span class="k">DELIMITER</span><span class="w"> </span><span class="o">//</span>
+</span><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calculer_somme</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">INT</span>
+<span class="w">  </span><span class="k">RETURN</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="hll"><span class="w">  </span><span class="o">//</span>
+</span></pre></div>
+</div>
+<p>Ici, on change le délimiteur en <code class="docutils literal notranslate"><span class="pre">//</span></code> afin que l’instruction se termine à la fin de la déclaration de la fonction.</p>
+<p>Mais si l’on maintient ce code en l’état, notre modification risque d’être permanente puisque le délimiteur va rester <code class="docutils literal notranslate"><span class="pre">//</span></code>. Pour revenir au comportement par défaut après notre déclaration de fonction, il faut redéfinir le délimiteur comme <code class="docutils literal notranslate"><span class="pre">;</span></code> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">DELIMITER</span><span class="w"> </span><span class="o">//</span>
+<span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">calculer_somme</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">INT</span>
+<span class="w">  </span><span class="k">RETURN</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="o">//</span>
+<span class="hll"><span class="w">  </span><span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+</span></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Pour ne pas les alourdir, les exemples montrés dans ce cours n’incluent pas la modification de délimiteur. Cependant, il est toujours <strong>indispensable</strong> de l’utiliser.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="SQL Avancé" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="syntaxic_elements.html" class="btn btn-neutral float-right" title="Éléments syntaxiques cruciaux" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2023, Thibault Truffert.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

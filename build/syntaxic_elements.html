@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Éléments syntaxiques cruciaux &mdash; Documentation SDWBDD23 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b20cc3f5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=68bd05ab"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Fonctions et les Procédures SQL" href="functions_and_procedures.html" />
+    <link rel="prev" title="Avant propos" href="disclaimer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SDWBDD23
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Au menu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Accueil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Avant propos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Éléments syntaxiques cruciaux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#declaration-de-variable">Déclaration de variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables-globales">Variables globales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables-de-session">Variables de session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables-locales">Variables locales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bloc-conditionnel-if-else">Bloc conditionnel IF..ELSE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functions_and_procedures.html">Les fonctions et les procédures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="td_functions_and_procedures.html">TD sur les fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="triggers.html">Les triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="td_triggers.html">TD sur les triggers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDWBDD23</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Éléments syntaxiques cruciaux</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/syntaxic_elements.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="elements-syntaxiques-cruciaux">
+<h1>Éléments syntaxiques cruciaux<a class="headerlink" href="#elements-syntaxiques-cruciaux" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Pour survivre dans les eaux troubles des programmes SQL, il est bon de connaître certains éléments syntaxiques. Cette page tente de lister les plus cruciaux.</p>
+<section id="declaration-de-variable">
+<h2>Déclaration de variable<a class="headerlink" href="#declaration-de-variable" title="Lien permanent vers cette rubrique"></a></h2>
+<p>L’une des premières choses à savoir faire reste de déclarer des variables. Trois manières cohabitent en MySQL.</p>
+<ol class="arabic simple">
+<li><p>Édition d’une variable globale avec <code class="docutils literal notranslate"><span class="pre">&#64;&#64;</span></code></p></li>
+<li><p>Déclaration d’une variable de session avec <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p></li>
+<li><p>Déclaration d’une variable locale avec <code class="docutils literal notranslate"><span class="pre">DECLARE</span></code></p></li>
+</ol>
+</section>
+<section id="variables-globales">
+<h2>Variables globales<a class="headerlink" href="#variables-globales" title="Lien permanent vers cette rubrique"></a></h2>
+<p>On ne peut pas créer de nouvelles variables globales en SQL. L’usage est uniquement de <strong>modifier la valeur de variables globales déjà existantes.</strong> Dans tous les cas, cela se fait en utilisant <code class="docutils literal notranslate"><span class="pre">SET</span></code> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="o">@@</span><span class="n">sql_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#39;</span>
+</pre></div>
+</div>
+<p>Ceci modifie la valeur de la variable globale sql_mode.</p>
+<p>Notez que cette syntaxe est également possible :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">sql_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#39;</span>
+</pre></div>
+</div>
+<p>Et qu’il est possible de modifier une variable globale pour la durée d’une session uniquement, en faisant :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="k">SESSION</span><span class="w"> </span><span class="n">sql_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="variables-de-session">
+<h2>Variables de session<a class="headerlink" href="#variables-de-session" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Il est possible de créer des variable dont la portée se limite à la session courante, c’est-à-dire une session d’échange avec le serveur tant qu’elle n’est pas fermée par le serveur.</p>
+<p>Cette syntaxe utilise <cite>SET</cite> et nécessite de préfixer le nom de sa variable par <cite>&#64;</cite> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">ma_variable_de_session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Il est également possible de fixer la valeur d’une variable directement dans un SELECT, mais il faudra alors utiliser l’opérateur <code class="docutils literal notranslate"><span class="pre">:=</span></code> pour le différencier de <code class="docutils literal notranslate"><span class="pre">=</span></code> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">ma_variable_de_session</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="variables-locales">
+<h2>Variables locales<a class="headerlink" href="#variables-locales" title="Lien permanent vers cette rubrique"></a></h2>
+<p>On peut déclarer des variables localement dans des programmes stockés tels que des fonctions et des procédures. Ces variables n’existeront que dans le programme stocké où elles sont déclarées. Pour cela, on utilise <code class="docutils literal notranslate"><span class="pre">DECLARE</span></code>. Voici la syntaxe :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DECLARE</span><span class="w"> </span><span class="n">var_name</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="n">var_name</span><span class="p">]</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">value</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Pour assigner ensuite une valeur à cette variable, il faut utiliser <code class="docutils literal notranslate"><span class="pre">SET</span></code>.
+Exemple:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DECLARE</span><span class="w"> </span><span class="n">date_de_naissance</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CURDATE</span><span class="p">();</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">date_de_naissance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;18/05/1988&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="bloc-conditionnel-if-else">
+<h2>Bloc conditionnel IF..ELSE<a class="headerlink" href="#bloc-conditionnel-if-else" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Vous le connaissez déjà dans d’autres langages, voici comment s’organise un bloc conditionnel en MySQL :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span>IF condition1 THEN
+    {...statements to execute when condition1 is TRUE...}
+
+[ ELSEIF condition2 THEN
+    {...statements to execute when condition1 is FALSE and condition2 is TRUE...} ]
+
+[ ELSE
+    {...statements to execute when both condition1 and condition2 are FALSE...} ]
+
+END IF;
+</pre></div>
+</div>
+<p>Et voici un exemple :</p>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">DECLARE</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="k">IF</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Supérieur à 10&#39;</span><span class="p">;</span>
+<span class="n">ELSEIF</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Égal à 10&#39;</span><span class="p">;</span>
+<span class="n">ELSEIF</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Entre 6 et 10&#39;</span><span class="p">;</span>
+<span class="k">ELSE</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Inférieur ou égal à 5&#39;</span><span class="p">;</span>
+<span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="disclaimer.html" class="btn btn-neutral float-left" title="Avant propos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="functions_and_procedures.html" class="btn btn-neutral float-right" title="Fonctions et les Procédures SQL" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2023, Thibault Truffert.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
