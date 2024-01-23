@@ -18,5 +18,6 @@ SQL Avancé
    Les triggers <triggers>
    TD sur les triggers <td_triggers>
    Les transactions <transactions>
+   Optimisation <optimisation>
 
 

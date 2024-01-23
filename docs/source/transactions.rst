@@ -178,7 +178,7 @@ Pour définir le niveau d'isolation, on écrit ceci **avant le démarrage de la 
 
 .. code-block:: sql
 
-    SET TRANSACTION ISOLATION LEVEL niveau;
+    SET TRANSACTION ISOLATION LEVEL <niveau>;
 
 
 
