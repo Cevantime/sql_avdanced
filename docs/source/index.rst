@@ -19,5 +19,8 @@ SQL Avancé
    TD sur les triggers <td_triggers>
    Les transactions <transactions>
    Optimisation <optimisation>
+   TD optimisation <td_optimisation>
 
-
+   EXPLAIN explained <explain>
+   Les vues <views>
+   
