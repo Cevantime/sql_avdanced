@@ -1,5 +1,5 @@
-Cours sur EXPLAIN en MySQL
-==========================
+EXPLAIN expliqué 
+======================
 
 Introduction
 ------------
